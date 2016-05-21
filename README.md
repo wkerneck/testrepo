@@ -1,2 +1,2 @@
 # testrepo
-SMU Intro to Data Science Project Folder
+SMU - Intro to Data Science Project Folder
