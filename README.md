@@ -1,2 +1,2 @@
-# testrepo
-SMU - Intro to Data Science Project Folder
+# stat6306introdatascience
+This folder contains project, files and material related to course
