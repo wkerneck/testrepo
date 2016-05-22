@@ -1,0 +1,142 @@
+---
+title: "Live Session 2"
+author: "Bill Kerneckel"
+date: "May 15, 2016"
+output:
+  word_document: default
+  pdf_document:
+    keep_tex: yes
+  html_document:
+    keep_md: yes
+    theme: united
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<br>
+
+## Unicorns are real
+
+
+## Live Session Unit 2 Assignment
+Create an R markdown document that contains embedded R code from week 1 live session questions.
+
+### 1. The	log	of	a	positive	number:
+```{r}
+log(15)
+```
+
+a. What	is	the	default	base	for	the	log	function?	log(x,base)
+
+b. Calculate	the	log	of your	previous	number	with	a	different	number?
+```{r}
+log(10,10)
+```
+
+c. What is the log of a negative answer? 
+The	real	logarithm	is	undefined	 for	negative	real	numbers.	Example:	$y = logb(x)$
+
+--------
+
+### 2. Create	a	vector	of	15	standard	normal	random	variables.	Calculate	its	mean	and	SD.
+
+a. First create a vector of 15 standard normal random variables. 
+
+```{r}
+rnorm(15)
+```
+
+b. Next copy the vector of 15 standard random variables and make a new variable. 
+
+```{r}
+randomnumbers.a <- rnorm(15)
+randomnumbers.a
+```
+
+c. Now calculate the mean. 
+
+```{r}
+mean(randomnumbers.a)
+```
+
+d. Finally calculate the standard deviation. 
+
+```{r}
+sd(randomnumbers.a)
+```
+
+--------
+
+### 3. Change	the	mean to 10 and the	SD to 2	and	recalculate	the	vector of 15 random	normal variables. Calculate its mean and	SD.
+
+a. Change	the	mean to 10 and the	SD to 2	and	recalculate	the	vector of 15 random	normal variables.
+
+```{r}
+a <- rnorm(15,mean=10, sd=2)
+a
+```
+
+b. Calculate the mean
+```{r}
+mean(a)
+```
+
+c. Calculate the standard deviation
+```{r}
+sd(a)
+```
+
+d. The mean and standard deviation are different because the 15 numbers that where randomly assigned where close but not exact to the numbers created for the mean of 10 or standard deviation of 2.
+
+--------
+
+### 4. Why	are	the	means	and	SD	not	exactly	the	same	as	the	means	and	SDs	specified	in	the	function?
+
+The reason the mean and SD are different is because of random chance. It is highly unlikely that the mean (or SD) of any length random number vector will be exactly what was specified in the function.
+
+--------
+
+### 5. Vector	Operations
+
+The	weights	of	6	individuals	in	kg	are	60,	72,	57,	90,	95,	72.
+Their	heights	(in	m)	are	1.80,	1.85,	1.72,	1.90,	1.74,	1.91
+
+```{r}
+weight <-c(57,60,	72,	72,	90,	95)
+height <-c(1.80,	1.85,	1.72,	1.90,	1.74,	1.91)
+```
+
+```{r}
+plot(weight, height)
+```
+
+a. 6 individuals	were plotted.	For 4	individuals	as	there height	increased	so	did	their	weight.	For	2	individuals	they	are	shorter	and	heavier.	These	two	seemed to	be the	outliers.
+
+b. Calculate	the	BMI	for	each	individual	(BMI	=	weight	in	kg	divided	by the	square	of	the	height	in	m)
+
+```{r}
+mweight <- (weight/(height)^2)
+mweight
+```
+
+c. Calculate	the	mean	for	weight
+
+```{r}
+mweight <- (mean(weight))
+mweight
+```
+
+d. Subtract	the	mean from	each value	of weight
+
+```{r}
+x <- mweight - weight
+x
+```
+
+e. Sum the results. Now you know why we square the deviations from the mean to calculate a standard deviation!
+
+```{r}
+sum(x)
+```
+
